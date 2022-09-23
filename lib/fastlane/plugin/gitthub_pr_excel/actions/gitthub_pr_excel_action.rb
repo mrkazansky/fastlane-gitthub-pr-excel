@@ -50,7 +50,7 @@ module Fastlane
           end
         end
         
-        p.serialize "#{params[:file_name]}.xlsx"
+        p.serialize "fastlane/#{params[:file_name]}.xlsx"
 
       end
 
