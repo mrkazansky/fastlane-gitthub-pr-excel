@@ -1,3 +1,3 @@
 lane :test do
-  gitthub_pr_excel
+  gitthub_pr_excel(git_token: "", repo_name: "knockknock-android", branch_name: "", reviewer: "", file_name: "")
 end
