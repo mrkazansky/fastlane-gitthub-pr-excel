@@ -13,7 +13,7 @@ module Fastlane
           server_url: "https://api.github.com",
           api_token: params[:git_token],
           http_method: "GET",
-          path: "/search/issues?q=repo:belivetech/#{params[:repo_name]}+base:#{branch}+is:pull-request+is:merged&per_page=100",
+          path: "/search/issues?q=repo:belivetech/#{params[:repo_name]}+base:#{branch}+is:pull-request+is:merged&per_page=1000",
         )
         prs = response[:json]["items"].sort_by { |obj| Date.parse(obj["updated_at"].to_s.strip).to_s}.map { |item| { :title => item["title"].strip, :url => item["html_url"], :date => Date.parse(item["updated_at"]).strftime("%a, %d %b %Y").to_s} }.group_by{|h| h[:date]}
 
